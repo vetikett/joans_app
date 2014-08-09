@@ -60,54 +60,75 @@ textarea {
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
+@font-face {
+    font-family: 'jellyka_-_le_grand_sautRg';
+    src: url('fonts/le_grand_saut-webfont.eot');
+    src: url('fonts/le_grand_saut-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/le_grand_saut-webfont.woff') format('woff'),
+         url('fonts/le_grand_saut-webfont.ttf') format('truetype'),
+         url('fonts/le_grand_saut-webfont.svg#jellyka_-_le_grand_sautRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
-    background-color: #272727;
+    font: 16px/26px "Book Antiqua", "Trebuchet MS", sans-serif;
+    background: url("../img/cover2.jpg"), #272727 no-repeat;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0 -40px;
+    display: block;
 }
 
 .wrapper {
-    width: 90%;
-    margin: 0 5%;
+    width: 100%;
+    height: auto;
 }
 
 /* ===================
-    ALL: Orange Theme
+    ALL: Theme
    =================== */
-.home-background-size-fix {
-   width: 100%;
-   height:580px;
-}   
-
-.header-container {
-    
-}
-
-.main-container {
-    background: url("../img/cover.jpg") no-repeat;
-    background-size: 100%;
-}
-
-.footer-container,
-.main aside {
-    border-top: 20px solid #E4E796;
-}
-
 .header-container,
 .footer-container,
 .main aside {
-    background: #A5A689;
+    background: #272727;
 }
 
-.title {
+
+.page-tag {
+    background: #272727;
     text-align: center;
-    color: white;
+    margin-top: 320px;
+    padding: 5px 10px;
+    color: #E7E998;
+    border-bottom: 2px solid #A5A689;
+}
+
+.header-container {
+    font-family: 'jellyka_-_le_grand_sautRg';
+    font-size: 1.7em;
+
+    
+    position: relative;
+    margin: 245px 0 0 0;
+
+    width: 100%;
+    background: #272727;
+}
+
+.main-container {
+   
+}
+
+.footer-container {
+    border-top: 20px solid #272727;
+    width: 100%;
 }
 
 /* ==============
     MOBILE: Menu
    ============== */
-
 nav ul {
     margin: 0;
     padding: 0;
@@ -115,20 +136,21 @@ nav ul {
 
 nav a {
     display: block;
-    margin-bottom: 10px;
-    padding: 15px 0;
-    border-radius: 2px;
+    margin-top: 10px;
+    padding: 5px 0px;
 
     text-align: center;
     text-decoration: none;
-    font-weight: bold;
-
-    color: grey;
-    background: #E4E796;
+    
+    color: #E7E998;
+    background: #272727;
 }
 
-nav a:hover,
 nav a:visited {
+    color: #E7E998;
+}
+
+nav a:hover {
     color: white;
 }
 
@@ -141,7 +163,7 @@ nav a:hover {
    ============== */
 
 .main {
-    padding: 30px 0;
+    padding-top: 30px 0;
 }
 
 .main article h1 {
@@ -155,7 +177,36 @@ nav a:hover {
 
 .footer-container footer {
     color: white;
-    padding: 20px 0;
+    padding: 5px 0;
+}
+
+.listen-button {
+    margin: -400px 0 0 5%;
+    padding: 0 0;
+    width: 45%;
+    height: auto;
+    border-radius: 1px;
+
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+
+    color: #E7E998;
+    background: #272727;
+}
+
+
+
+
+.spotify-text {
+    display: block;
+    color: #E7E998;
+}
+
+.itunes-text {
+    display: block;
+    color: #E7E998;
 }
 
 /* ===============
@@ -193,21 +244,67 @@ nav a:hover {
 /* ====================
     INTERMEDIATE: Menu
    ==================== */
+    body {
+        font: 16px/26px "Book Antiqua", "Trebuchet MS", sans-serif;
+        background: url("../img/cover2.jpg"), #272727 no-repeat;
+        background-repeat: no-repeat;
+        background-position: 0 -15px;
+        background-size: 100%;
+    }
+
+    .wrapper {
+        width: 90%;
+        height: auto;
+        margin: 0 5%;
+    }
+
+    .page-tag {
+        background: #272727;
+        text-align: center;
+        margin-top: 0;
+        padding: 5px 10px;
+        color: #E7E998;
+      
+    }
+
+    .header-container {
+        margin: 0;
+    }
+
+    .footer-container {
+        visibility: hidden;
+    }
+
+    nav {
+        
+    }
 
     nav a {
         float: left;
         width: 13%;
-        margin: 0 1.7%;
-        padding: 6px 2%;
+        margin: 0 0.7%;
+        padding: 12px 0.8% 4px;
         margin-bottom: 0;
     }
 
     nav li:first-child a {
-        margin-left: 0;
+       
+
     }
 
     nav li:last-child a {
         margin-right: 0;
+    }
+
+/* ====================
+    INTERMEDIATE: Main
+   ==================== */
+    .listen-button {
+        display: block;
+        margin: 270px 0 100px 0;
+        padding: 1% 0;
+        width: 45%;
+        border-radius: 2px;
     }
 
 /* ========================
@@ -228,6 +325,9 @@ nav a:hover {
 /* ====================
     WIDE: CSS3 Effects
    ==================== */
+    body {
+        background-position: 0 -50px;
+    }
 
     .header-container,
     .main aside {
@@ -237,14 +337,19 @@ nav a:hover {
                 
     }
 
+    .listen-button {
+        display: block;
+        margin: 370px 0 100px 0;
+        padding: 1% 0;
+        width: 45%;
+        border-radius: 2px;
+    }
+
 /* ============
     WIDE: Menu
    ============ */
 
-    nav {
-        float: right;
-        width: 100%;
-    }
+    
 
 /* ============
     WIDE: Main
@@ -254,8 +359,9 @@ nav a:hover {
     }
 
     .main article {
-        float: left;
-        width: 57%;
+       
+        background: #272727;
+        
     }
 
     .main aside {
@@ -270,6 +376,10 @@ nav a:hover {
     Maximal Width
    =============== */
 
+    body {
+        background-position: 0 -95px;
+    }
+
     .wrapper {
         width: 1026px; /* 1140px - 10% for margins */
         margin: 0 auto;
@@ -278,6 +388,7 @@ nav a:hover {
     nav ul {
         color: black;
     }
+
 }
 
 /* ==========================================================================

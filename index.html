@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
 
+
         <script src="libs/angular.js"></script>
         <script src="libs/angular-route.js"></script>
         <script src="libs/jquery-1.11.1.js"></script>
@@ -25,29 +26,31 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="header-container">
+        <div class="header-container"> <!-- header -->
             <header class="wrapper clearfix">
-                <h1 class="title">Joan Alderman</h1>
                 <nav>
                     <ul>
-                        <li><a href="#">Historien</a></li>
-                        <li><a href="#">Media</a></li>
-                        <li><a href="#">Låtarna</a></li>
-                        <li><a href="#">Medverkande</a></li>
-                        <li><a href="#">Kontakt</a></li>
-                        
+                        <li><a href="#/">hem</a></li>
+                        <li><a href="#/historien">historien</a></li>
+                        <li><a href="#/media">media</a></li>
+                        <li><a href="#/latarna">låtarna</a></li>
+                        <li><a href="#/medverkande">medverkande</a></li>
+                        <li><a href="#/kontakt">kontakt</a></li>
                    </ul>
                 </nav>
             </header>
         </div>
 
-        <div class="main-container">
-            <div ng-view class="main wrapper clearfix">
-
-                
-
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
+            
+        <div class="main wrapper clearfix"> <!-- main -->
+            <div class="listen-button">
+                    <a href="#" class="spotify-text">Spotify >></a>
+                    <a href="#" class="itunes-text">Itunes >></a>
+            </div>
+            
+            <div ng-view></div> <!-- rendered view -->
+        
+        </div>
 
         <div class="footer-container">
             <footer class="wrapper">
