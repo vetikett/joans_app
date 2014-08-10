@@ -1,32 +1,59 @@
-angular.module('joansApp', ['ngRoute'])
+var joansApp = angular.module('joansApp', ['ngRoute', 'ngAnimate', 'ngTouch']);
 
-.config(function($routeProvider){
+joansApp.config(function($routeProvider) {
+
 	$routeProvider
 		.when('/', {
-			// controller: 'mainCtrl',
-			templateUrl: 'templates/home.html'
+			templateUrl: 'templates/home.html',
+			controller: 'mainCtrl'
 		})
 		.when('/historien', {
-			// controller: 'mainCtrl',
-			templateUrl: 'templates/historien.html'
+			templateUrl: 'templates/historien.html',
+			controller: 'historienCtrl'
 		})
 		.when('/media', {
-			// controller: 'mainCtrl',
-			templateUrl: 'templates/media.html'
+			templateUrl: 'templates/media.html',
+			controller: 'mediaCtrl'
 		})
 		.when('/latarna', {
-			// controller: 'mainCtrl',
-			templateUrl: 'templates/latarna.html'
+			templateUrl: 'templates/latarna.html',
+			controller: 'latarnaCtrl'
 		})
 		.when('/medverkande', {
-			// controller: 'mainCtrl',
-			templateUrl: 'templates/medverkande.html'
+			templateUrl: 'templates/medverkande.html',
+			controller: 'medverkandeCtrl'
 		})
 		.when('/kontakt', {
-			// controller: 'mainCtrl',
-			templateUrl: 'templates/kontakt.html'
+			templateUrl: 'templates/kontakt.html',
+			controller: 'kontaktCtrl'
 		})
 		.otherwise({
 			redirectTo: '/'
 		});
+});
+
+// Controllers ==============
+
+joansApp.controller('mainCtrl', function($scope) {
+	$scope.pageClass = 'page-home';
+});
+
+joansApp.controller('historienCtrl', function($scope) {
+	$scope.pageClass = 'page-historien';
+});
+
+joansApp.controller('mediaCtrl', function($scope) {
+	$scope.pageClass = 'page-media';
+});
+
+joansApp.controller('latarnaCtrl', function($scope) {
+	$scope.pageClass = 'page-latarna';
+});
+
+joansApp.controller('medverkandeCtrl', function($scope) {
+	$scope.pageClass = 'page-medverkande';
+});
+
+joansApp.controller('kontaktCtrl', function($scope) {
+	$scope.pageClass = 'page-kontakt';
 });
