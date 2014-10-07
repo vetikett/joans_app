@@ -9,8 +9,12 @@ textarea {
 }
 
 html {
-    font-size: 1em;
+    font-size: 16px;
     line-height: 1.4;
+}
+
+p {
+    letter-spacing: 0.0625em;
 }
 
 ::-moz-selection {
@@ -69,15 +73,27 @@ textarea {
          url('fonts/le_grand_saut-webfont.svg#jellyka_-_le_grand_sautRg') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'simple_printregular';
+    src: url('fonts/simple_print-webfont.eot');
+    src: url('fonts/simple_print-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/simple_print-webfont.woff') format('woff'),
+         url('fonts/simple_print-webfont.ttf') format('truetype'),
+         url('fonts/simple_print-webfont.svg#simple_printregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
 body {
-    font: 16px/26px "Book Antiqua", "Trebuchet MS", sans-serif;
-    background: url("../img/cover2.jpg"), #272727 no-repeat;
+    font-family: 'simple_printregular', "Trebuchet MS", sans-serif;
+    font-size: 1.6em;
+    background: url("../img/cover.jpg"), #272727 no-repeat;
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: 0 250px;
+    background-position: 0 0;
     display: block;
     color: #E3E495;
 }
@@ -95,36 +111,69 @@ body {
 .main aside {
 }
 
-
+.right-block {
+    background-color: blue;
+    width: 330px;
+    float: right;
+}
 
 .page {
     position: absolute;
     margin-top: 30px;
-    text-align: center;   
+    text-align: left;   
     padding: 5px 10px;
 }
 
 .header-container {
+    margin: 0;
     font-family: 'jellyka_-_le_grand_sautRg';
-    font-size: 2.2em;
-    display: relative;
+    font-size: 1.25em;
     width: 100%;
 }
 
 .main {
-   display: relative;
+
+}
+
+.page-tag {
+    margin-top: 200px;
+    width: 100%;
+}
+
+.page-tag h1 {
+    display: inline;
+    border-bottom: 1px solid #E3E495;
+    padding: 0 20px;
+    width: 100%;
 }
 
 .footer-container {
-    display: relative;
+   
     width: 100%;
 }
 
 /* ==============
     MOBILE: Menu
    ============== */
+.main-nav {
+    display: none;
+}
+
+.mobile-nav-icon {
+    margin: 2% 0 0 7%;
+    
+}
+
+.mobile-nav-container {
+    display: block;
+}
+
+.mobile-nav-icon img {
+
+}
+
 nav ul {
-    padding: 0;
+    margin: 0 0 0 -3%;
 }
 
 nav a {
@@ -170,33 +219,47 @@ nav a:hover {
     padding: 5px 0;
 }
 
-.page-home {
-    
+.page h1 {
+    font-family: 'jellyka_-_le_grand_sautRg';
+    letter-spacing: 4px;
 }
 
-.listen-button {
-    width: 45%;
+.home-text {
+    font-family: 'jellyka_-_le_grand_sautRg';
+    text-align: center;
+    margin: -15% 28% 0 -10%;
+}
+
+.album-text {
+font-size: 40px;
+}
+
+.artist-text {
+font-size: 42px;
+margin-top: -14px;
+margin-left: -10%;
+}
+
+.listen-buttons {
+    width: 50%;
     height: auto;
-    border-radius: 1px;
-
-
     text-align: center;
     text-decoration: none;
-
+    margin: 90px auto;
     color: #E7E998;
 }
 
-
-
-
-.spotify-text {
-    display: block;
+.spotify img {
+    margin-bottom: 3px;
+    height: 55px;
     color: #E7E998;
+    padding-bottom: 40px;
 }
 
-.itunes-text {
-    display: block;
+.itunes img {
+    height: 55px;
     color: #E7E998;
+    margin-left: 7%;
 }
 
 /* ===============
@@ -221,84 +284,11 @@ nav a:hover {
     -moz-animation:slideOutLeft 0.5s both ease-in;
     animation:slideOutLeft 0.5s both ease-in;   
 }
-.page.ng-enter        {  
+ .ng-enter        {  
     -webkit-animation:slideInRight 0.5s both ease-in;
     -moz-animation:slideInRight 0.5s both ease-in;
     animation:slideInRight 0.5s both ease-in;    
 }
-
-/* page specific animations ------------------------ */
-
-/* home -------------------------- 
-.page-home.ng-leave         {
-    -webkit-transform-origin: 0% 0%;
-    -webkit-animation: rotateFall 1s both ease-in;
-    -moz-transform-origin: 0% 0%;
-    -moz-animation: rotateFall 1s both ease-in;
-    transform-origin: 0% 0%;
-    animation: rotateFall 1s both ease-in;
-}
-.page-home.ng-enter         {  
-    -webkit-animation:scaleUp 0.5s both ease-in;
-    -moz-animation:scaleUp 0.5s both ease-in;
-    animation:scaleUp 0.5s both ease-in;    
-}
-*/
-
-/* about ------------------------ */
-
-
-/* contact ---------------------- 
-.page-contact.ng-leave      {
-    -webkit-transform-origin: 50% 50%;
-    -webkit-animation: rotateOutNewspaper .5s both ease-in;
-    -moz-transform-origin: 50% 50%;
-    -moz-animation: rotateOutNewspaper .5s both ease-in;
-    transform-origin: 50% 50%;
-    animation: rotateOutNewspaper .5s both ease-in;
-}
-.page-contact.ng-enter      { 
-    -webkit-animation:slideInUp 0.5s both ease-in;
-    -moz-animation:slideInUp 0.5s both ease-in;
-    animation:slideInUp 0.5s both ease-in;  
-}
-*/
-
-/* rotate and fall 
-@-webkit-keyframes rotateFall {
-    0% { -webkit-transform: rotateZ(0deg); }
-    20% { -webkit-transform: rotateZ(10deg); -webkit-animation-timing-function: ease-out; }
-    40% { -webkit-transform: rotateZ(17deg); }
-    60% { -webkit-transform: rotateZ(16deg); }
-    100% { -webkit-transform: translateY(100%) rotateZ(17deg); }
-}
-@-moz-keyframes rotateFall {
-    0% { -moz-transform: rotateZ(0deg); }
-    20% { -moz-transform: rotateZ(10deg); -moz-animation-timing-function: ease-out; }
-    40% { -moz-transform: rotateZ(17deg); }
-    60% { -moz-transform: rotateZ(16deg); }
-    100% { -moz-transform: translateY(100%) rotateZ(17deg); }
-}
-@keyframes rotateFall {
-    0% { transform: rotateZ(0deg); }
-    20% { transform: rotateZ(10deg); animation-timing-function: ease-out; }
-    40% { transform: rotateZ(17deg); }
-    60% { transform: rotateZ(16deg); }
-    100% { transform: translateY(100%) rotateZ(17deg); }
-}
-*/
-
-/* scale up 
-@keyframes scaleUp {
-    from        { opacity: 0.3; transform: scale(0.8); }
-}
-@-moz-keyframes scaleUp {
-    from        { opacity: 0.3; -moz-transform: scale(0.8); }
-}
-@-webkit-keyframes scaleUp {
-    from        { opacity: 0.3; -webkit-transform: scale(0.8); }
-}
-*/
 
 /* slide in from the right */
 @keyframes slideInRight {
@@ -314,22 +304,9 @@ nav a:hover {
     to      { -webkit-transform: translateX(0); }
 }
 
-/* slide in from the bottom
-@keyframes slideInUp {
-    from    { transform:translateY(100%); }
-    to      { transform: translateY(0); }
-}
-@-moz-keyframes slideInUp {
-    from    { -moz-transform:translateY(100%); }
-    to      { -moz-transform: translateY(0); }
-}
-@-webkit-keyframes slideInUp {
-    from    { -webkit-transform:translateY(100%); }
-    to      { -webkit-transform: translateY(0); }
-}
-*/
 
- slide in from the bottom
+
+ /* slide in from the bottom */
 @keyframes slideOutLeft {
     to      { transform: translateX(-100%); }
 }
@@ -339,31 +316,7 @@ nav a:hover {
 @-webkit-keyframes slideOutLeft {
     to      { -webkit-transform: translateX(-100%); }
 }
-
-
-/* rotate out newspaper 
-@-webkit-keyframes rotateOutNewspaper {
-    to { -webkit-transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
-}
-@-moz-keyframes rotateOutNewspaper {
-    to { -moz-transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
-}
-@keyframes rotateOutNewspaper {
-    to { transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
 
 /* ==========================================================================
    Media Queries
@@ -375,8 +328,8 @@ nav a:hover {
     INTERMEDIATE: Menu
    ==================== */
     body {
-        font: 16px/26px "Book Antiqua", "Trebuchet MS", sans-serif;
-        background: url("../img/cover2.jpg"), #272727 no-repeat;
+        font-family: 'simple_printregular', "Trebuchet MS", sans-serif;
+        background: url("../img/cover.jpg"), #272727 no-repeat;
         background-repeat: no-repeat;
         background-position: 0 -15px;
         background-size: 100%;
@@ -388,42 +341,99 @@ nav a:hover {
         margin: 0 5%;
     }
 
-    .page-tag {
-        text-align: center;
-        margin-top: 0;
-        padding: 5px 10px;
-        color: #E7E998;
-      
-    }
-
     .page {
         position: absolute;
-        margin-top: 30px;
-        text-align: center;   
+        margin-top: 0;
+        text-align: left;   
         padding: 5px 10px;
     }
 
     .header-container {
-        margin: 0;
         display: relative;
+        margin: 0;
+    }
+
+    .menu-icon {
+        margin-bottom: -30px;
     }
 
     .main {
-        display: relative;
+    }
+
+    .text-block-spacer {
+        width: 45%;
+        height: 100px;
+        float: right;
+    }
+
+    .home-text {
+    font-family: 'jellyka_-_le_grand_sautRg';
+    text-align: center;
+    margin: -4% 0 0 -47%;
+    }
+
+    .album-text {
+        font-size: 64px; 
+    }
+
+    .artist-text {
+        margin-top: -50px;
+        margin-left: -8%;
+        font-size: 52px;
+    }
+
+    .listen-buttons {
+        margin: 100px 0 0 -15px;
+        text-align: center;
+        text-decoration: none;
+        color: #E7E998;
+    }
+
+    .listen-buttons img {
+        display: inline-block;
+        margin-right: 30px;
+        width: 40%;
+        height: auto;
+    }
+
+    .spotify img {
+        margin-bottom: 3px;
+        height: auto;
+        color: #E7E998;
+        padding-bottom: 1px;
+    }
+
+    .itunes img {
+        height: auto;
+        color: #E7E998;
+        margin: 0;
     }
 
     .footer-container {
-        display: relative;
     }
 
-    nav {
-        
+    .main-nav{
+        display: block;
+    }
+
+
+    .mobile-nav-icon {
+        display: none;
+    }
+
+    #mobile-nav {
+        display: none;
+    }
+
+    nav ul {
+        padding: 0;
     }
 
     nav a {
         float: left;
-        width: 13%;
-        margin: 0 0.7%;
+        font-size: 26px;
+        width: 15%;
+        margin: 0 ;
         padding: 12px 0.8% 4px;
         margin-bottom: 0;
     }
@@ -461,7 +471,7 @@ nav a:hover {
     WIDE: CSS3 Effects
    ==================== */
     body {
-        background-position: 0 -50px;
+        background-position: 0 -40px;
     }
 
     .header-container,
@@ -472,13 +482,53 @@ nav a:hover {
                 
     }
 
+     .text-block-spacer {
+        
+        height: 300px;
+    }
+
+    .home-text {
+    font-family: 'jellyka_-_le_grand_sautRg';
+    text-align: center;
+    margin: -4% 0 0 -57%;
+    }
+
+    .album-text {
+        font-size: 64px; 
+    }
+
+    .artist-text {
+        margin-top: -20px;
+        margin-left: -2%;
+        font-size: 52px;
+    }
+
+    .listen-buttons {
+        margin: 120px 0 0 -4%;
+        text-align: center;
+        text-decoration: none;
+
+        color: #E7E998;
+    }
+
+     .listen-buttons img {
+        width: 40%;
+     }
+
 
 
 /* ============
     WIDE: Menu
    ============ */
 
-    
+    nav a {
+        float: left;
+        font-size: 34px;
+        width: 15%;
+        margin: 0 ;
+        padding: 12px 0.8% 4px;
+        margin-bottom: 0;
+    }
 
 /* ============
     WIDE: Main
@@ -514,8 +564,41 @@ nav a:hover {
     }
 
     nav ul {
-        color: black;
+       padding: 0;
     }
+
+    .text-block-spacer {
+        width: 55%;
+        height: 700px;
+    }
+
+    .home-text {
+        font-family: 'jellyka_-_le_grand_sautRg';
+        text-align: center;
+        margin: -4% 0 0 -57%;
+    }
+
+    .album-text {
+        font-size: 64px; 
+    }
+
+    .artist-text {
+        margin-top: -20px;
+        margin-left: -2%;
+        font-size: 52px;
+    }
+
+    .listen-buttons {
+        margin: 120px 0 0 -4%;
+        text-align: center;
+        text-decoration: none;
+
+        color: #E7E998;
+    }
+
+     .listen-buttons img {
+        width: 40%;
+     }
 
 }
 
